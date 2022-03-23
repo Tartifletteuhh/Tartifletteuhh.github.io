@@ -8,15 +8,23 @@
     <title>Minia_AutoV3</title>
 </head>
 <body>
-    <input type="file"
+    <div class="button-wrapper">
+        <span class="label">
+          Upload File
+        </span>
+        
+        <input type="file"
         onchange="test(this)"
-        id="avatar" name="avatar"
+        name="upload" id="upload" class="upload-box" placeholder="Upload File"
         accept="image/png, image/jpeg, .webp">
-    <p>Le nom du fichier que vous avez envoyé est: <span id="filename">(none)</span></p>
+        
+      </div>
+    
+    <p>Le nom du fichier que vous avez envoyé est: <span id="filename"></span></p>
     <a id="download" download="triangle.png" crossorigin="anonymous">
-        <button type="button" onClick="download()">Download</button>
+        <button class="custom-btn btn-6" onClick="download()"><span>Download</span></button>
     </a>
-    <p>ajouter "online" ?
+    <p>ajouter "online" ?<br>
     <label class="switch">
         <input type="checkbox" id="myCheck" onchange="canvas()">
         <span class="slider round"></span>
