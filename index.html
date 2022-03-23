@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Minia_AutoV3</title>
+</head>
+<body>
+    <input type="file"
+        onchange="test(this)"
+        id="avatar" name="avatar"
+        accept="image/png, image/jpeg, .webp">
+    <p>Le nom du fichier que vous avez envoyé est: <span id="filename">(none)</span></p>
+    <a id="download" download="triangle.png" crossorigin="anonymous">
+        <button type="button" onClick="download()">Download</button>
+    </a>
+    <p>ajouter "online" ?
+    <label class="switch">
+        <input type="checkbox" id="myCheck" onchange="canvas()">
+        <span class="slider round"></span>
+    </label></p>
+    <canvas id="canvas" width="1024" height="575"></canvas>
+    <script src='index.js'></script>
+</body>
+</html>
