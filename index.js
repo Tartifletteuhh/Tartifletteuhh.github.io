@@ -21,16 +21,26 @@ function canvas() {
     var Online = new Image()
     Online.crossOrigin = "anonymous";
     Online.src = "./online.png"
-    
-    img.onload = function() {
-        let OnlineH = Online.height
 
-        if(!checkBox.checked) layout.drawImage(img, 0, 0, 1024, 575)
-        else {
+    var Seal = new Image()
+    Seal.crossOrigin = "anonymous";
+    Seal.src = "./SGC-Seal_of_quality.png"
+    Seal.onload = function() {
+
+    
+        img.onload = function() {
+            let OnlineH = Online.height
+            let SealW = Seal.width
+            let SealH = Seal.height
+
             layout.drawImage(img, 0, 0, 1024, 575)
-            layout.drawImage(Online, 0, (680-OnlineH), 512, OnlineH*0.67) 
+            layout.drawImage(Seal, 1024-(SealW*0.3), 575-(SealH*0.3), SealW*0.3, SealH*0.3)
+
+            if(checkBox.checked) layout.drawImage(Online, 0, (680-OnlineH), 512, OnlineH*0.67)
+            
         }
     }
+    
             
         
 }
