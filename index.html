@@ -11,24 +11,47 @@
     <div class="button-wrapper">
         <span class="label">
           Upload File
+        
+            <input type="file"
+            onchange="test(this)"
+            name="upload" id="upload" class="upload-box" 
+            accept="image/png, image/jpeg, .webp">
         </span>
-        
-        <input type="file"
-        onchange="test(this)"
-        name="upload" id="upload" class="upload-box" placeholder="Upload File"
-        accept="image/png, image/jpeg, .webp">
-        
       </div>
     
     <p>Le nom du fichier que vous avez envoyé est: <span id="filename"></span></p>
     <a id="download" download="triangle.png" crossorigin="anonymous">
         <button class="custom-btn btn-6" onClick="download()"><span>Download</span></button>
-    </a>
+    </a><br>
+
+    <div>
+        <input type="radio" name="group1" id="seal1" value="BG" onchange="canvas()">
+        <label for="seal1">Bas / Gauche</label>
+        <input type="radio" name="group1" id="seal2" value="BD" onchange="canvas()" checked>
+        <label for="seal2">Bas / Droite</label>
+        <input type="radio" name="group1" id="seal3" value="HG" onchange="canvas()">
+        <label for="seal3">Haut / Gauche</label>
+        <input type="radio" name="group1" id="seal4" value="HD" onchange="canvas()">
+        <label for="seal4">Haut / Droite</label>
+    </div>
+    
     <p>ajouter "online" ?<br>
     <label class="switch">
         <input type="checkbox" id="myCheck" onchange="canvas()">
         <span class="slider round"></span>
     </label></p>
+
+    <div class="onlineChoice" id="onlineChoice">
+        <input type="radio" name="group2" id="online1" value="BG" onchange="canvas()" checked>
+        <label for="online1">Bas / Gauche</label>
+        <input type="radio" name="group2" id="online2" value="BD" onchange="canvas()">
+        <label for="online2">Bas / Droite</label>
+        <input type="radio" name="group2" id="online3" value="HG" onchange="canvas()">
+        <label for="online3">Haut / Gauche</label>
+        <input type="radio" name="group2" id="online4" value="HD" onchange="canvas()">
+        <label for="online4">Haut / Droite</label>
+    </div>
+
     <canvas id="canvas" width="1024" height="575"></canvas>
     <script src='index.js'></script>
 </body>
